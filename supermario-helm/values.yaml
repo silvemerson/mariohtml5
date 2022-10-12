@@ -9,6 +9,13 @@ image:
   pullPolicy: IfNotPresent
   tag: ""
 
+containers:
+  ports:
+    - name: http
+      containerPort: 8080
+      protocol: TCP
+
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -16,9 +23,4 @@ fullnameOverride: ""
 service:
   type: ClusterIP
   port: 8080
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+  target-port: 8080
