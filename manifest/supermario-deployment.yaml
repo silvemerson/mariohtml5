@@ -2,17 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: supermario-deployment
+  namespace: games
   labels:
-    app: supermario
+    app: supermario-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: supermario
+      app: supermario-deployment
   template:
     metadata:
       labels:
-        app: supermario
+        app: supermario-deployment
     spec:
       containers:
       - name: supermario
