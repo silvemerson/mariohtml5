@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: supermario-ingress
+  namespace: games
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.class: "nginx"
+   
+spec:
+  # ingressClassName: nginx
+  rules:
+  - host: supermario.emerson.cloudns.cl	
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: supermario-svc
+            port:
+              number: 8080
+  tls: 
+    - 
+      hosts: 
+        - supermario.emerson.cloudns.cl	
+      secretName: supermario-ssl
