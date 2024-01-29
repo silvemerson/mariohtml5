@@ -19,10 +19,5 @@ pipeline{
             }
         }
 
-    post{
-        success{
-            junit 'nosetests.xml'
-        }
-    }
 }
 }
