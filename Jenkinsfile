@@ -4,7 +4,7 @@ pipeline{
         stage('Quality-Gate'){
             steps{
                 script{
-                    def scannerPath = tool "SonarScanner"
+                    def scannerPath = tool "supermario-scanner"
                     withSonarQubeEnv('supermario-sonarqube'){
                         sh "${scannerPath}/bin/sonar-scanner -Dsonar.projectKey=supermario -Dsonar.sources=./webapp"
                     }
@@ -18,6 +18,5 @@ pipeline{
                 }
             }
         }
-
-}
+      }
 }
