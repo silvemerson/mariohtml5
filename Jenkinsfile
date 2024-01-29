@@ -7,7 +7,7 @@ pipeline{
                     def scannerPath = tool "supermario-scanner"
                     withSonarQubeEnv('supermario-sonarqube'){
                         //sh "${scannerPath}/bin/sonar-scanner -Dsonar.projectKey=supermario -Dsonar.sources=./webapp"
-                        sh "${scannerPath}/bin/sonar-scanner -Dsonar.projectKey=supermario -Dsonar.sources=./webapp -Dsonar.host.url=http://10.92.2.3 -Dsonar.token=sqp_beec16ed103b9154ab1baaec137b4187e52f7544"
+                        sh "${scannerPath}/bin/sonar-scanner -Dsonar.projectKey=supermario -Dsonar.sources=./webapp -Dsonar.host.url=http://10.96.6.74 -Dsonar.token=sqp_beec16ed103b9154ab1baaec137b4187e52f7544"
                     }
                 }
             }
